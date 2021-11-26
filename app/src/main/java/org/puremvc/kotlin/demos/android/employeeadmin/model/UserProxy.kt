@@ -13,6 +13,7 @@ import org.puremvc.kotlin.multicore.patterns.proxy.Proxy
 
 class UserProxy: Proxy(NAME, ArrayList<UserVO>()) {
 
+    // 单例
     companion object {
         const val NAME = "UserProxy"
     }

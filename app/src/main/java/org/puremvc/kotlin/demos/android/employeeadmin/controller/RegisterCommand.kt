@@ -19,7 +19,7 @@ class RegisterCommand: SimpleCommand() {
 
     override fun execute(notification: INotification) {
 
-        val activity = notification.body as WeakReference<AppCompatActivity>
+        val activity = notification.body as WeakReference<*>
 
         if (activity.get() is EmployeeAdmin) {
             if (facade.hasMediator(EmployeeAdminMediator.NAME))
@@ -28,5 +28,4 @@ class RegisterCommand: SimpleCommand() {
             facade.registerMediator(EmployeeAdminMediator(activity as WeakReference<Any?>))
         }
     }
-
 }

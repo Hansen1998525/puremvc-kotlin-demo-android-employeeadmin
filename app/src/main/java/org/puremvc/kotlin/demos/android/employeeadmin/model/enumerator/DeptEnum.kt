@@ -18,8 +18,10 @@ enum class DeptEnum: Parcelable {
     ACCT { override fun toString() = "Accounting" },
     SALES { override fun toString() = "Sales" },
     PLANT { override fun toString() = "Plant" },
-    SHIPPING { override fun toString() = "Shipping" },
-    QC { override fun toString() = "Quality Control" };
+    SHIPPING { override fun toString() = "Shipping" }
+//        ,QC { override fun toString() = "Quality Control" }
+        ;
+
 
     companion object {
         private fun list(): ArrayList<DeptEnum> {
@@ -27,8 +29,8 @@ enum class DeptEnum: Parcelable {
                 ACCT,
                 SALES,
                 PLANT,
-                SHIPPING,
-                QC
+                SHIPPING
+//                ,QC
             )
         }
 

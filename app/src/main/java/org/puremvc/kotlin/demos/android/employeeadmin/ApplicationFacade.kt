@@ -23,6 +23,8 @@ class ApplicationFacade(key: String) : Facade(key) {
 
         const val REGISTER: String = "register"
 
+        const val TEST: String = "test"
+
         fun getInstance(key: String): IFacade {
             return Facade.getInstance(key) { k -> ApplicationFacade(k) }
         }
@@ -32,6 +34,7 @@ class ApplicationFacade(key: String) : Facade(key) {
         super.initializeController()
         registerCommand(STARTUP) { StartupCommand() }
         registerCommand(REGISTER) { RegisterCommand() }
+//        registerCommand(TEST) { RegisterCommand() }
     }
 
     fun registerActivity(activity: WeakReference<AppCompatActivity>) {
@@ -41,5 +44,4 @@ class ApplicationFacade(key: String) : Facade(key) {
     fun startup(application: Application) {
         sendNotification(STARTUP, application)
     }
-
 }
